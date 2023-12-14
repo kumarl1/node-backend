@@ -2,7 +2,7 @@ import mongoose, {Schema} from "mongoose";
 import  jwt  from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 const userSchema = new Schema({
-    userName:{
+    userame:{
         type:String,
         required :true,
         unique:true,
@@ -59,7 +59,7 @@ userSchema.pre("save",async function(next){
         {
             _id:this._id,
             email:this.email,
-            username:this.userName,
+            username:this.username,
             fullName : this.fullName
         },
         process.env.ACCESS_TOKEN_SECRET,
