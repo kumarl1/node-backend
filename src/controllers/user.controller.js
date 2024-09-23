@@ -295,6 +295,14 @@ const updateUserCoverImage = asyncHandler( async (req, res) =>{
 
 })
 
+const getUserChannelprofile  = asyncHandler( async (req,res) =>{
+    const {username} = req.params;
+    if(!username.trim()){
+        throw new ApiError(400, "user is missing");
+        
+    }
+})
+
 export {
     registerUser,
     loginUser,
@@ -304,5 +312,6 @@ export {
     getCurrentUser,
     updateAccountDetails,
     updateUserAvatar,
-    updateUserCoverImage
+    updateUserCoverImage,
+    getUserChannelprofile
  };
